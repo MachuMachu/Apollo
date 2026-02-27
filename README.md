@@ -1,4 +1,12 @@
-# Apollo
+### Currently Compiles with:
+- Fedora: 43
+- Kernel: 6.18.12-200.fc43.x86_64
+- DE: KDE 6.6.1
+- Display: x11
+- *Uses Chatgpt, whatever version is in guest mode, for debugging.*
+
+
+# Apollo 
 
 Apollo is a self-hosted desktop stream host for [Artemis(Moonlight Noir)](https://github.com/ClassicOldSong/moonlight-android). Offering low latency, native client resolution, cloud gaming server capabilities with support for AMD, Intel, and Nvidia GPUs for hardware encoding. Software encoding is also available. A web UI is provided to allow configuration and client pairing from your favorite web browser. Pair from the local server or any mobile device.
 

@@ -334,10 +334,12 @@ namespace system_tray {
     tray.notification_icon = TRAY_ICON;
     tray.notification_title = "Launch Error";
     tray.notification_text = msg;
-    tray.notification_cb = []() {
-      BOOST_LOG(info) << "Force stop from notification"sv;
-      proc::proc.terminate();
-    };
+    tray.notification_cb = [](NotifyNotification*,
+                          char*,
+                          void*) {
+    BOOST_LOG(info) << "Force stop from notification"sv;
+    proc::proc.terminate();
+};
     tray.tooltip = PROJECT_NAME;
     tray_update(&tray);
   }
@@ -358,8 +360,10 @@ namespace system_tray {
     tray.notification_text = "Click here to complete the pairing process";
     tray.notification_icon = TRAY_ICON_LOCKED;
     tray.tooltip = PROJECT_NAME;
-    tray.notification_cb = []() {
-      launch_ui("/pin#PIN");
+    tray.notification_cb = [](NotifyNotification*,
+                          char*,
+                          void*) {
+        launch_ui("/pin#PIN");
     };
     tray_update(&tray);
   }
